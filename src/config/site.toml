@@ -104,14 +104,13 @@ layout = "grid"
 
 [config.home.quote]
 text = [
-  "Live,",
-  "Laug,",
-  "love, and learn!",
+  "Live, laugh, love,",
+  "and learn!",
 ]
 image = "/images/logo-with-name.png"
 
 [config.home.intro]
-title = "I'm Vanessa"
+title = "I'm "
 name = "Vanessa Huang"
 body = [
   "I'm a junior studying CS/CogSci at RPI",
@@ -120,14 +119,6 @@ body = [
   ".✦ ݁˖",
 ]
 image = "/images/logo-cat.png"
-
-[config.home.latest]
-count = 1
-heatmapWeeks = 24
-showHeatmapLatest = true
-excludeDraft = true
-startDate = ""
-dateArchiveBaseHref = ""
 
 [[config.home.navigation]]
 icon = "briefcase"
@@ -151,8 +142,7 @@ href = "https://github.com/dodolalorc/navfolio"
 # icon = "github"
 # title = "Open Source"
 # subtitle = "Code, experiments, and tools"
-# href = "https://github.com/dodolalorc/astro-navfolio"
-
+# href = "https://github.com/dodolalorc/astro-navfolio
 [[config.home.connect]]
 label = "GitHub"
 href = "https://github.com/nesquik2"
