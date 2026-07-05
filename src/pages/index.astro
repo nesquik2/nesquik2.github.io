@@ -22,6 +22,7 @@ const { home, profile, site } = await getSiteConfig();
       <IntroCard intro={home.intro} quote={home.quote} />
     </Fragment>
 
+    {/*
     <Fragment slot="activity">
       <BlogHeatmap
         weeks={home.latest.heatmapWeeks}
@@ -32,6 +33,7 @@ const { home, profile, site } = await getSiteConfig();
         dateArchiveBaseHref={home.latest.dateArchiveBaseHref || undefined}
       />
     </Fragment>
+    */}
 
     <Fragment slot="links">
       <NavigationCard items={home.navigation} />
