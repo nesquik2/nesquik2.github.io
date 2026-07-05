@@ -41,6 +41,7 @@ const resolvedBase =
 // https://astro.build/config
 export default defineConfig({
   site: "https://nesquik2.github.io",
+  output: "static",
   base: resolvedBase,
   markdown: {
     remarkPlugins: [remarkMath],
@@ -51,5 +52,4 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  output: "static",
 });
