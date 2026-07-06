@@ -91,6 +91,10 @@ href = "/"
 label = "Projects"
 href = "/projects"
 
+[[config.topNav.links]]
+label = "Skills"
+href = "/skills"
+
 # [[config.topNav.links]]
 # label = "Vibe"
 # href = "/vibe"

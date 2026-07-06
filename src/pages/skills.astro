@@ -1,0 +1,231 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import BlogTopNav from '../components/blog/BlogTopNav.astro';
+import { getSiteConfig } from '../data/site';
+
+const { site, theme } = await getSiteConfig();
+const palette = theme.palette;
+
+const skillCategories = [
+  {
+    title: 'Languages',
+    skills: [
+      { name: 'JavaScript', icon: 'devicon-javascript-plain' },
+      { name: 'TypeScript', icon: 'devicon-typescript-plain' },
+      { name: 'Python', icon: 'devicon-python-plain' },
+      { name: 'Java', icon: 'devicon-java-plain' },
+      { name: 'C/C++', icon: 'devicon-cplusplus-plain' },
+      { name: 'R', icon: 'devicon-r-plain' },
+    ],
+  },
+  {
+    title: 'Frontend, Backend, & Frameworks',
+    skills: [
+      { name: 'React', icon: 'devicon-react-original' },
+      { name: 'Next.js', icon: 'devicon-nextjs-plain' },
+      { name: 'Tailwind CSS', icon: 'devicon-tailwindcss-plain' },
+      { name: 'Bootstrap', icon: 'devicon-bootstrap-plain' },
+      { name: 'Node.js', icon: 'devicon-nodejs-plain' },
+      { name: 'FastAPI', icon: 'devicon-fastapi-plain' },
+      { name: 'Docker', icon: 'devicon-docker-plain' },
+    ],
+  },
+  {
+    title: 'Design & UX',
+    skills: [
+      { name: 'Figma', icon: 'devicon-figma-plain' },
+      { name: 'Adobe XD', icon: 'devicon-xd-plain' },
+      { name: 'Canva', icon: 'devicon-canva-plain' },
+    ],
+  },
+  {
+    title: 'Developer Tools & Specialized',
+    skills: [
+      { name: 'Git', icon: 'devicon-git-plain' },
+      { name: 'GitHub', icon: 'devicon-github-original' },
+      { name: 'VS Code', icon: 'devicon-vscode-plain' },
+      { name: 'IntelliJ', icon: 'devicon-intellij-plain' },
+      { name: 'Eclipse', icon: 'devicon-eclipse-plain' },
+      { name: 'Agile/Scrum', icon: 'devicon-jira-plain' },
+    ],
+  },
+];
+---
+
+<!doctype html>
+<html lang="en" data-palette={palette}>
+  <head>
+    <BaseHead title={`Skills | ${site.title}`} description="Languages and tools I work with." />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      main {
+        width: min(100%, var(--layout-shell-width));
+        padding-top: 126px;
+      }
+
+      .skills-shell {
+        position: relative;
+      }
+
+      .skills-hero {
+        position: relative;
+        width: 100%;
+        margin-bottom: clamp(72px, 10vw, 132px);
+      }
+
+      .skills-title {
+        max-width: 560px;
+        margin: 0;
+        color: var(--paper-ink);
+        font-size: clamp(2.32rem, 6.6vw, 4.35rem);
+        font-weight: 400;
+        line-height: 0.96;
+      }
+
+      .skills-subtitle {
+        max-width: 30ch;
+        margin: 18px 0 0;
+        color: var(--paper-ink-soft);
+        font-family: var(--font-serif-cn);
+        font-size: clamp(0.98rem, 1.7vw, 1.16rem);
+        line-height: 1.68;
+      }
+
+      .skills-section {
+        margin-bottom: clamp(68px, 10vw, 124px);
+      }
+
+      .skills-section-title {
+        margin: 0 0 28px;
+        color: var(--paper-ink);
+        font-size: clamp(1.56rem, 3vw, 2.1rem);
+        font-weight: 400;
+        line-height: 1.1;
+        border-bottom: 1px solid var(--paper-line);
+        padding-bottom: 16px;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 24px;
+        margin-bottom: 12px;
+      }
+
+      .skill-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 20px 16px;
+        border: 1px solid var(--paper-line);
+        border-radius: 12px;
+        background: var(--paper-surface);
+        box-shadow: var(--paper-shadow);
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          background 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--paper-line-strong);
+        background: var(--paper-control-hover);
+        box-shadow: var(--paper-shadow-lift);
+      }
+
+      .skill-icon {
+        font-size: 48px;
+        color: var(--paper-accent);
+        opacity: 0.92;
+        transition: color 180ms ease;
+      }
+
+      .skill-card:hover .skill-icon {
+        color: var(--accent-dark);
+      }
+
+      .skill-name {
+        margin: 0;
+        text-align: center;
+        color: var(--paper-ink);
+        font-size: 0.95rem;
+        font-weight: 500;
+        line-height: 1.4;
+        transition: color 180ms ease;
+      }
+
+      .skill-card:hover .skill-name {
+        color: var(--paper-accent);
+      }
+
+      @media (max-width: 720px) {
+        main {
+          padding-top: 94px;
+        }
+
+        .skills-hero {
+          margin-bottom: 52px;
+        }
+
+        .skills-grid {
+          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+          gap: 16px;
+        }
+
+        .skill-card {
+          padding: 16px 12px;
+        }
+
+        .skill-icon {
+          font-size: 40px;
+        }
+
+        .skill-name {
+          font-size: 0.88rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <BlogTopNav />
+    <main data-pagefind-body>
+      <div class="skills-shell">
+        <header class="skills-hero">
+          <h1 class="skills-title">Languages & Skills</h1>
+          <p class="skills-subtitle">
+            Tools, languages, and frameworks I work with to build things.
+          </p>
+        </header>
+
+        {
+          skillCategories.map((category) => (
+            <section class="skills-section">
+              <h2 class="skills-section-title">{category.title}</h2>
+              <div class="skills-grid">
+                {category.skills.map((skill) => (
+                  <div class="skill-card glass-card">
+                    <i class:list={['skill-icon', skill.icon]} />
+                    <h3 class="skill-name">{skill.name}</h3>
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))
+        }
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
