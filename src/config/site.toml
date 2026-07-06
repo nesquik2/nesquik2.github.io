@@ -12,7 +12,7 @@ showTrail = true
 [config.theme]
 # Available palettes:
 # green-soft, green-vivid, rose-soft, pink-soft, purple-soft, blue-soft, orange-soft, brown-soft
-palette = "green-soft"
+palette = "rose-soft"
 
 [config.code]
 lightTheme = "catppuccin-latte"
@@ -68,7 +68,7 @@ pageview = true
 comment = true
 
 [config.profile]
-name = "Vanessa Huang"
+name = "Vanessa H"
 handle = "@nesquik2" 
 role = "Developer & Designer"
 company = "RPI"
@@ -104,8 +104,7 @@ layout = "grid"
 
 [config.home.quote]
 text = [
-  "Live, laugh, love,",
-  "and learn!",
+  "⋆˙⟡ —",
 ]
 image = "/images/logo-with-name.png"
 
@@ -113,8 +112,7 @@ image = "/images/logo-with-name.png"
 title = "I'm "
 name = "Vanessa Huang"
 body = [
-  "I'm a junior studying CS/CogSci at RPI",
-  "I love working with technology that is genuinely useful to people and also fun!",
+  "I'm a junior studying CS/CogSci at RPI, I love working with technology that is genuinely useful to people and also fun!",
   "Look around and see what I've been up to!",
   ".✦ ݁˖",
 ]
